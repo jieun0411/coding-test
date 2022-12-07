@@ -1,20 +1,13 @@
 function solution(s) {
-  let answer;
-  let stack = [];
+  let stackCount = 0;
   let arr = s.split("");
 
-  if (arr[0] === ")") return false;
-  if (arr[arr.length] === "(") return false;
-
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === "(") {
-      stack.push("(");
-    } else if (arr[i] === ")") {
-      stack.pop();
-    }
+    arr[i] === "(" ? (stackCount += 1) : (stackCount -= 1);
+    if (stackCount < 0) return false;
   }
 
-  stack.length === 0 ? (answer = true) : (answer = false);
-
-  return answer;
+  return stackCount === 0 ? true : false;
 }
+
+console.log(solution(")()("));
