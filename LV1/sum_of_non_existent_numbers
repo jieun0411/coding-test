@@ -1,0 +1,5 @@
+function solution(numbers) {
+  var answer = 45;
+  numbers.map((x) => (answer -= x));
+  return answer;
+}
