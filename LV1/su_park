@@ -1,0 +1,4 @@
+function solution(n) {
+  let str = n % 2 == 0 ? "" : "수";
+  return "수박".repeat(Math.floor(n / 2)) + str;
+}
